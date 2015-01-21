@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  background-url: "http://icie.cs.byu.edu/images/background2.jpg";
+}
+
+div.pane {
+  border: 1px solid brown;
+  background-color: #F0E6D2;
+  border-bottom-left-radius: 20px;
+  box-shadow: 5px 5px darkgray;
+  
+}
+
+#showoff {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 0px;
+}
