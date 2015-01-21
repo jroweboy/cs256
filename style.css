@@ -7,7 +7,6 @@ div.pane {
   border: 1px solid brown;
   background-color: #F0E6D2;
   border-top-left-radius: 20px;
-  box-shadow: 10px 10px darkgray;
   padding: 15px 15px 15px 20px;
   width: 250px;
   margin-bottom: 30px;
@@ -17,4 +16,5 @@ div.pane {
 #showoff {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 0px;
+  box-shadow: 10px 10px 10px 1px darkgray;
 }
