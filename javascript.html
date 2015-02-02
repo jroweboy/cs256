@@ -7,6 +7,8 @@ div.button {
   border-color: red;
   box-shadow: 10px 10px 10px 0px black;
   display: inline;
+  padding: 15px 30px;
+  font-size: 24px;
 }
 
 div.button:hover {
@@ -60,16 +62,16 @@ function changeText(e) {
     console.log("Attribute action must be set");
     return;
   }
-  var class = this.getAttribute("data-class");
-  if (class === null) {
+  var _class = this.getAttribute("data-class");
+  if (_class === null) {
     console.log("Attribute class must be set");
     return;
   }
   var message = this.getAttribute("data-message");
   if (action === "replace") {
-    this.className = class;
+    this.className = _class;
   } else if (action === "add") {
-    this.className = this.className + " " + class;
+    this.className = this.className + " " + _class;
   } else {
     console.log("Invalid action");
     return;
