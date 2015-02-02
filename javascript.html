@@ -4,7 +4,9 @@
 <style>
 div.button {
   border: 1px;
+  border-style: solid;
   border-color: red;
+  border-radius: 25px;
   box-shadow: 10px 10px 10px 0px black;
   display: inline;
   padding: 15px 30px;
@@ -57,7 +59,8 @@ This is some text to be displayed and changed
 </div>
 <script>
 function changeText(e) {
-  var action = this.getAttribute("data-action"); 
+  var action = this.getAttribute("data-action");
+  var text = document.getElementById("text");
   if (action === null) {
     console.log("Attribute action must be set");
     return;
@@ -69,9 +72,9 @@ function changeText(e) {
   }
   var message = this.getAttribute("data-message");
   if (action === "replace") {
-    this.className = _class;
+    text.className = _class;
   } else if (action === "add") {
-    this.className = this.className + " " + _class;
+    text.className = text.className + " " + _class;
   } else {
     console.log("Invalid action");
     return;
