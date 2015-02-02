@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Javascript Demo</title>
+<style>
+div.button {
+  border: 1px;
+  border-color: red;
+  box-shadow: 10px 10px 10px 0px black;
+  display: inline;
+}
+
+div.button:hover {
+  box-shadow: 10px 10px 1px 0px black;
+}
+
+div.button:active {
+  padding-top: 10px;
+  padding-left: 10px;
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.redTimes {
+  color: red;
+  font-family: "Times";
+}
+.blueArial {
+  color: blue;
+  font-family: "Arial";
+}
+.black {
+  color: black;
+}
+.green {
+  color: green;
+}
+
+#text {
+  padding: 30px;
+  font-size: 24px;
+}
+  
+</style>
+</head>
+<body>
+
+<h1>Testing Javascript</h1>
+<div>
+<div class="button" data-action="replace" data-class="redTimes">Red Times</div>
+<div class="button" data-action="add" data-class="green">Green</div>
+<div class="button" data-action="replace" data-class="blueArial">Blue Arial</div>
+<div class="button" data-action="add" data-message="Hello there" data-class="black">Black Hello</div>
+</div>
+<div id="text">
+This is some text to be displayed and changed
+</div>
+<script>
+function changeText(e) {
+  var action = this.getAttribute("data-action"); 
+  if (action === null) {
+    console.log("Attribute action must be set");
+    return;
+  }
+  var class = this.getAttribute("data-class");
+  if (class === null) {
+    console.log("Attribute class must be set");
+    return;
+  }
+  var message = this.getAttribute("data-message");
+  if (action === "replace") {
+    this.className = class;
+  } else if (action === "add") {
+    this.className = this.className + " " + class;
+  } else {
+    console.log("Invalid action");
+    return;
+  }
+  if (message !== null) {
+    this.innerHTML = message;
+  }
+}
+
+var buttons = document.getElementsByClassName("button");
+for (i=0; i<buttons.length; ++i) {
+  buttons[i].addEventListener('click', changeText, false);
+}
+</script>
+</body>
+</html>
