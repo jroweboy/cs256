@@ -46,7 +46,7 @@ div.button:active {
 
 #text {
   padding: 30px;
-  font-size: 24px;
+  font-size: 32px;
 }
   
 </style>
@@ -60,6 +60,7 @@ div.button:active {
 <div class="button" data-action="replace" data-class="blueArial">Blue Arial</div>
 <div class="button" data-action="add" data-message="Hello there" data-class="black">Black Hello</div>
 </div>
+<br><br>
 <p id="text">
 This is some text to be displayed and changed
 </p>
@@ -80,7 +81,8 @@ function changeText(e) {
   if (action === "replace") {
     text.className = _class;
   } else if (action === "add") {
-    text.className = text.className + " " + _class;
+    // we want the add class to override any other add class
+    text.className = text.className.split(" ")[0] + " " + _class;
   } else {
     console.log("Invalid action");
     return;
