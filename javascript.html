@@ -13,10 +13,11 @@ div.button {
   box-shadow: 7px 7px 10px 0px gray;
   display: block;
   float: left;
-  width: 125px;
+  width: 150px;
   margin: 7px;
   font-size: 24px;
   text-align: center;
+  padding: 10px 0px;
 }
 
 div.button:hover {
@@ -44,7 +45,6 @@ div.button:active {
 }
 
 #text {
-  display: block;
   padding: 30px;
   font-size: 24px;
 }
@@ -60,10 +60,8 @@ div.button:active {
 <div class="button" data-action="replace" data-class="blueArial">Blue Arial</div>
 <div class="button" data-action="add" data-message="Hello there" data-class="black">Black Hello</div>
 </div>
-<p>
-<div id="text">
+<p id="text">
 This is some text to be displayed and changed
-</div>
 </p>
 <script>
 function changeText(e) {
@@ -88,7 +86,7 @@ function changeText(e) {
     return;
   }
   if (message !== null) {
-    this.innerHTML = message;
+    text.innerHTML = message;
   }
 }
 
