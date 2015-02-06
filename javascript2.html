@@ -6,17 +6,15 @@ Javascript 2
 </title>
 <style>
 #button {
-  background: url("button.png");
-  position: absolute;
+  background: url("button.png") 0 0;
   width: 100px;
   height: 100px;
-  clip: rect(0px,100px,0px,0px);
 }
 #button:hover {
-  clip: rect(0px,200px,0px,100px);
+  background: url("button.png") -100px 0;
 }
 #button:active {
-  clip: rect(0px,300px,0px,200px);
+  background: url("button.png") -200px 0;
 }
 </style>
 </head>
