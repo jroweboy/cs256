@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title>
+Javascript 2
+</title>
+<style>
+#button {
+  background: url("button.png");
+  clip: rect(0px,100px,0px,0px);
+}
+#button:hover {
+  clip: rect(0px,200px,0px,100px);
+}
+#button:active {
+  clip: rect(0px,300px,0px,200px);
+}
+</style>
+</head>
+<body>
+<div id="button"></div>
+<script>
+var onlyOnce = false;
+document.getElementById("button").onclick = function() {
+  if (onlyOnce) {
+    window.alert("No more");
+  } else {
+    var output = "";
+    for (i=0; i<=300; i+=3) {
+      if (i % 5 != 0) {
+        output += i + " ";
+      }
+    }
+    document.write(output);
+    onlyOnce = true;
+  }
+};
+</script>
+</body>
+</html>
