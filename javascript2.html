@@ -19,21 +19,21 @@ Javascript 2
 </style>
 </head>
 <body>
-<div id="button"></div>
+<div id="button" data-complete="false"></div>
 <script>
-var onlyOnce = false;
 document.getElementById("button").onclick = function() {
-  if (onlyOnce) {
+  if (document.getElementById("button").dataset.complete === "true") {
     window.alert("No more");
   } else {
-      var output = "<div id=\"button\"></div>";
+    var output = document.documentElement.outerHTML;
     for (i=0; i<=300; i+=3) {
       if (i % 5 != 0) {
         output += i + " ";
       }
     }
     document.write(output);
-    onlyOnce = true;
+    document.close();
+    document.getElementById("button").dataset.complete = "true";
   }
 };
 </script>
