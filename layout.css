@@ -1,1 +1,9 @@
+div.column {
+  width: 25%;
+  padding-left: 20px;
+  float: left;
+}
 
+@media screen and (max-width: 500px) {
+  
+}
