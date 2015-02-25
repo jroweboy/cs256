@@ -1,1 +1,24 @@
-
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+	<div class="section">
+		<div class="column">
+			name: George
+		</div>
+		<div class="column">
+			address: 1234 Mockingbird Lane, Somewhere, AL 12343
+		</div>
+		<div class="column">
+			phone: (123) 456-7890
+		</div>
+		<div class="column">
+			George was born in Alabama at a very early age. His closest relatives
+			were his mother and father. He had seven brothers and 4 sisters as well
+			as two dogs and a cow.
+		</div>
+	</div>
+</body>
+</html>
