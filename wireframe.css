@@ -1,1 +1,51 @@
 
+body {
+  min-width: 700px;
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#top_bar {
+  font-size: 20px;
+  border-bottom: 1px solid;
+  padding-bottom: 0px;
+}
+
+#recipe_tabs {
+  display: inline;
+  padding: 0px 2px 0px 2px;
+  list-style-type: none;
+}
+
+#meal_name {
+  padding: 5px;
+  padding-bottom: 0px; 
+  margin-right: -2px;
+}
+
+#meal_name:hover {
+  cursor: pointer;
+}
+
+li.tab {
+  display: inline;
+  border: 1px solid black;
+  margin: -2px;
+  padding: 5px;  
+}
+
+li.tab:hover {
+  cursor: pointer;
+}
+
+li.tab.horizontal {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-bottom: 0px; 
+  border-bottom-width: 0;
+}
+
+li.tab.vertical {
+  
+}
