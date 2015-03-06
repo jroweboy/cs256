@@ -1,5 +1,4 @@
-
-body {
+#main {
   min-width: 700px;
   max-width: 900px;
   margin-right: auto;
@@ -30,7 +29,6 @@ body {
 
 li.tab {
   display: inline;
-  border: 1px solid black;
   margin: -2px;
   padding: 5px;  
 }
@@ -39,13 +37,33 @@ li.tab:hover {
   cursor: pointer;
 }
 
-li.tab.horizontal {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+li.tab {
   padding-bottom: 0px; 
   border-bottom-width: 0;
 }
 
-li.tab.vertical {
-  
+ul.horizontal li {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid black;
+}
+
+ul.vertical li {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid black;
+}
+
+#swipe_bar {
+  float: right;
+  width: 150px;
+  margin-right: -6px;
+}
+
+ul.vertical li {
+  height: 100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
