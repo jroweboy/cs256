@@ -93,3 +93,7 @@ ul.vertical li {
 .hide {
   display: none;
 }
+.hide_if_multple {
+  display: none;
+}
+}
