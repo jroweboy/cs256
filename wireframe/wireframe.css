@@ -42,6 +42,10 @@ li.tab {
   border-bottom-width: 0;
 }
 
+ul.horizontal {
+  margin-bottom: 0px;
+}
+
 ul.horizontal li {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -55,9 +59,27 @@ ul.vertical li {
 }
 
 #swipe_bar {
-  float: right;
+  position: fixed;
+  top: 50px;
+  right: 2px;
   width: 150px;
-  margin-right: -6px;
+}
+
+#view_pane {
+  border-top: black solid 1px;
+  
+}
+
+#ingredients {
+  margin: 10px;
+  border-right: black solid 1px;
+  width: 25%;
+  float: left;
+}
+
+#instructions {
+  float: left;
+  margin: 10px;
 }
 
 ul.vertical li {
@@ -66,4 +88,8 @@ ul.vertical li {
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.hide {
+  display: none;
 }
