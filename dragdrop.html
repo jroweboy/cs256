@@ -62,8 +62,10 @@ function handleDragEnd(e) {
 function handleDrop(e) {
   e.preventDefault();
   //original = document.getElementById(e.dataTransfer.getData("text"));
-  from = parseInt(e.dataTransfer.getData("text"));
-  to = parseInt(e.target.id);
+  var id = e.dataTransfer.getData("text");
+  from = parseInt(id[id.length - 1]);
+  id = e.target.parentElement.id;
+  to = parseInt(id[id.length - 1]);
   console.log("from: " + from + " to: " + to);
   current_list.splice(to, 0, current_list.splice(from, 1)[0]);
   fillDataFromVar(current_list);
