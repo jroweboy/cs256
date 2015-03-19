@@ -33,7 +33,10 @@ var cs970json = [
   { name:"Phrieda", gpa:3.2 }
 ];
 
-var current_list = [];
+var current_list = {
+  "cs970": cs970json,
+  "cs920": cs920json,
+};
 var class_best = document.getElementById("class_best");
 var class_roster = document.getElementById("class_roster");
 function handleDragStart(e) {
@@ -41,7 +44,7 @@ function handleDragStart(e) {
 }
 
 function handleDragEnter(e) {
-  this.style = "border-top: solid 2px black;"
+  this.style = "border-top: 2px solid black;"
 }
 
 function handleDragLeave(e) {
@@ -58,19 +61,21 @@ function handleDragOver(e) {
 function handleDragEnd(e) {
   
 }
-
+var json_var = "";
 function handleDrop(e) {
   e.preventDefault();
   //original = document.getElementById(e.dataTransfer.getData("text"));
   var id = e.dataTransfer.getData("text");
   from = parseInt(id[id.length - 1]);
-  id = e.target.parentElement.id;
+  id = (e.target.id[0] == "d") ? e.target.id : e.target.parentElement.id;
   to = parseInt(id[id.length - 1]);
   console.log("from: " + from + " to: " + to);
-  current_list.splice(to, 0, current_list.splice(from, 1)[0]);
-  fillDataFromVar(current_list);
+  current_list[json_var].splice(to, 0, current_list[json_var].splice(from, 1)[0]);
+  fillDataFromVar(json_var);
 }
-function fillDataFromVar(json) {
+function fillDataFromVar(json_name) {
+  json_var = json_name;
+  json = current_list[json_name];
   var highest_gpa = -1;
   var highest_name = "No students in the class";
   // remove all previous children nodes
@@ -105,10 +110,9 @@ function fillDataFromVar(json) {
   } else {
     class_best.innerHTML = highest_name + " " + highest_gpa;
   }
-  currentlist = json;
 }
-document.getElementById("cs920").addEventListener("click", function() {fillDataFromVar(cs920json);}, false);
-document.getElementById("cs970").addEventListener("click", function() {fillDataFromVar(cs970json);}, false);
+document.getElementById("cs920").addEventListener("click", function() {fillDataFromVar("cs920");}, false);
+document.getElementById("cs970").addEventListener("click", function() {fillDataFromVar("cs970");}, false);
 </script>
 </body>
 </html>
