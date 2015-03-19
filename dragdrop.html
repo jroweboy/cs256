@@ -45,7 +45,7 @@ function handleDragStart(e) {
 
 function handleDragEnter(e) {
   var target = (e.target.id[0] == "d") ? e.target : e.target.parentElement;
-  target.style.borderTop = "2px solid black;"
+  target.style.borderTop = "2px solid black";
 }
 
 function handleDragLeave(e) {
@@ -96,6 +96,7 @@ function fillDataFromVar(json_name) {
     container.addEventListener('drop', handleDrop, false);
     container.addEventListener('dragend', handleDragEnd, false);
     var name = document.createElement("span");
+    name.style.display = "inline-block";
     name.style.width = "75px";
     var gpa = document.createElement("span");
     name.appendChild(document.createTextNode(json[i]["name"]));
