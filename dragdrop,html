@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>CS256 Drag & Drop</title>
+</head>
+
+<body>
+<div>
+<button id="cs920">CS 920</button>
+<button id="cs970">CS 970</button>
+</div>
+<div>
+  Class Best: 
+  <span id="class_best"></span>
+</div>
+<div id="class_roster"></div>
+<script type="text/javascript">
+// i didn't do the original json assignment so i'm cutting corners on that
+var cs920json = [	{ name:"George", gpa:3.5 },
+	{ name:"Gladys", gpa:2.0 },
+	{ name:"Phred", gpa:3.7 },
+	{ name:"Linda", gpa:4.0 },
+	{ name:"Gym", gpa:1.5 },
+	{ name:"Joan", gpa:3.4 }
+];
+
+var cs970json = [	{ name:"Phrank", gpa:3.2 },
+	{ name:"Phanny", gpa:2.2 },
+	{ name:"Phred", gpa:3.4 },
+	{ name:"Phlorance", gpa:3.0 },
+	{ name:"Phyllis", gpa:2.5 },
+	{ name:"Phrieda", gpa:3.2 }
+];
+
+var class_best = document.getElementById("class_best");
+var class_roster = document.getElementById("class_roster");
+
+function fillDataFromVar(json) {
+  var highest_gpa = -1;
+  var highest_name = "No students in the class";
+  for (i=0; i<json.length; ++i) {
+    var container = document.createElement("div");
+    // TODO make the div draggable here
+    var name = document.createElement("span");
+    var gpa = document.createElement("span");
+    name.appendChild(document.createTextNode(json[i]["name"]));
+    gpa.appendChild(document.createTextNode(json[i]["gpa"]));
+    if (json[i]["gpa"] > highest_gpa) {
+      highest_gpa = json[i]["gpa"];
+      highest_name = json[i]["name"];
+    }
+    container.appendChild(name);
+    container.appendChild(gpa);
+    class_roster.appendChild(container);
+  }
+  if (highest_gpa == -1) {
+    class_best.innerHTML = highest_name;
+  } else {
+    class_best.innerHTML = highest_name + " " + highest_gpa;
+  }
+}
+document.getElementById("cs920").onclick = function() {
+  fillDataFromVar(cs920json);
+};
+document.getElementById("cs970").onclick = function() {
+  fillDataFromVar(cs970json);
+};
+</script>
+</body>
+</html>
