@@ -44,11 +44,13 @@ function handleDragStart(e) {
 }
 
 function handleDragEnter(e) {
-  this.style = "border-top: 2px solid black;"
+  var target = (e.target.id[0] == "d") ? e.target : e.target.parentElement;
+  target.style.borderTop = "2px solid black;"
 }
 
 function handleDragLeave(e) {
-  this.style = "";
+  var target = (e.target.id[0] == "d") ? e.target : e.target.parentElement;
+  this.style.borderTop = "";
 }
 
 function handleDragOver(e) {
@@ -94,6 +96,7 @@ function fillDataFromVar(json_name) {
     container.addEventListener('drop', handleDrop, false);
     container.addEventListener('dragend', handleDragEnd, false);
     var name = document.createElement("span");
+    name.style.width = "75px";
     var gpa = document.createElement("span");
     name.appendChild(document.createTextNode(json[i]["name"]));
     gpa.appendChild(document.createTextNode(json[i]["gpa"]));
