@@ -33,7 +33,7 @@ var cs970json = [
   { name:"Phrieda", gpa:3.2 }
 ];
 
-var current_list = "";
+var current_list = [];
 var class_best = document.getElementById("class_best");
 var class_roster = document.getElementById("class_roster");
 function handleDragStart(e) {
@@ -65,6 +65,7 @@ function handleDrop(e) {
   to = parseInt(e.target.id);
   console.log("from: " + from + " to: " + to);
   current_list.splice(to, 0, current_list.splice(from, 1)[0]);
+  fillDataFromVar(current_list);
 }
 function fillDataFromVar(json) {
   var highest_gpa = -1;
@@ -76,7 +77,7 @@ function fillDataFromVar(json) {
   for (i=0; i<json.length; ++i) {
     var container = document.createElement("div");
     // TODO make the div draggable here
-    container.draggable = true;
+    container.setAttribute('draggable', 'true');
     container.id = "drag-id-" + i;
     container.addEventListener('dragstart', handleDragStart, false);
     container.addEventListener('dragenter', handleDragEnter, false)
