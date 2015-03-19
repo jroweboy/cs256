@@ -37,7 +37,6 @@ var current_list = [];
 var class_best = document.getElementById("class_best");
 var class_roster = document.getElementById("class_roster");
 function handleDragStart(e) {
-  e.preventDefault();
   e.dataTransfer.setData("text", e.target.id);
 }
 
@@ -50,7 +49,9 @@ function handleDragLeave(e) {
 }
 
 function handleDragOver(e) {
-  e.preventDefault();
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
   e.dataTransfer.dropEffect = 'move';
 }
 
